@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Simple Block
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1826398731, guid: cea41d1d0aea241f1a241358ab40168d, type: 3}
+  - {fileID: 846669529, guid: cea41d1d0aea241f1a241358ab40168d, type: 3}
+  - {fileID: -318960376, guid: cea41d1d0aea241f1a241358ab40168d, type: 3}
+  - {fileID: -2132610648, guid: cea41d1d0aea241f1a241358ab40168d, type: 3}
+  - {fileID: 837015795, guid: cea41d1d0aea241f1a241358ab40168d, type: 3}
