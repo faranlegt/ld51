@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,9 +8,11 @@ public class Snake : MonoBehaviour
 {
     public SnakeBlock blockTemplate;
 
-    public float baseSpeed = 1f;
+    public float baseSpeed = 4f;
 
     public Vector2 direction = Vector2.right;
+    
+    public CinemachineVirtualCamera followCamera;
 
     [ReadOnly] public SnakeBlock tail;
     [ReadOnly] public SnakeBlock head;
@@ -65,6 +68,8 @@ public class Snake : MonoBehaviour
         }
 
         newBlock.StartMoving(position);
+
+        followCamera.Follow = newBlock.transform;
 
         return newBlock;
     }
