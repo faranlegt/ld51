@@ -5,6 +5,8 @@ public class BlockDescription : ScriptableObject
 {
     public SpritesLine block;
 
+    public Sprite blockWaiting;
+
     [Space, Header("Tracks")] public SpritesLine trackHorizontal;
     
     public SpritesLine trackVertical;

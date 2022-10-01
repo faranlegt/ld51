@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class LineAnimator : MonoBehaviour
@@ -7,8 +8,11 @@ public class LineAnimator : MonoBehaviour
     public SpritesLine sprites;
     public int animationFrame = 0;
     public bool loop;
+    public bool reverse;
     public bool animate;
     public float frameLength = 1f;
+
+    public UnityEvent finished;
 
     private SpriteRenderer _renderer;
     private SpritesLine _oldSprites;
@@ -20,6 +24,8 @@ public class LineAnimator : MonoBehaviour
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        
+        finished ??= new UnityEvent();
 
         SyncSprite();
     }
@@ -29,12 +35,13 @@ public class LineAnimator : MonoBehaviour
         _revalidate = true;
     }
 
-    public void StartLine(SpritesLine line, bool? loop = null)
+    public void StartLine(SpritesLine line, bool? loop = null, bool? reverse = null)
     {
         sprites = line;
         animationFrame = 0;
         animate = true;
         this.loop = loop ?? this.loop;
+        this.reverse = reverse ?? this.reverse;
     }
 
     public void LaunchOnce(SpritesLine line)
@@ -72,21 +79,43 @@ public class LineAnimator : MonoBehaviour
     private void NextFrame()
     {
         _frameTime = 0;
-        if (animationFrame >= sprites.sprites.Length - 1)
+        if (reverse)
         {
-            if (loop)
+            if (animationFrame <= 0)
             {
-                animationFrame = 0;
+                if (loop)
+                {
+                    animationFrame = sprites.sprites.Length - 1;
+                }
+                else
+                {
+                    animate = false;
+                    finished?.Invoke();
+                }
             }
             else
             {
-                animate = false;
-                //_animationEnd.OnNext(Unit.Default);
+                animationFrame--;
             }
         }
         else
         {
-            animationFrame++;
+            if (animationFrame >= sprites.sprites.Length - 1)
+            {
+                if (loop)
+                {
+                    animationFrame = 0;
+                }
+                else
+                {
+                    animate = false;
+                    finished?.Invoke();
+                }
+            }
+            else
+            {
+                animationFrame++;
+            }
         }
 
         SyncSprite();

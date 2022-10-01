@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Empty Block
   m_EditorClassIdentifier: 
   block: {fileID: 11400000, guid: ecead3a5599404de59f0cba4cd07ed1f, type: 2}
+  blockWaiting: {fileID: -1178203834, guid: c300c9e2268a447679b4eb2a910546ac, type: 3}
   trackHorizontal: {fileID: 11400000, guid: 3b01e4e8e58cf43bca87e317b736c5a2, type: 2}
   trackVertical: {fileID: 11400000, guid: e7b490361668a44bc95147685f478535, type: 2}

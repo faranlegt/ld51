@@ -17,6 +17,8 @@ public class Snake : MonoBehaviour
     [ReadOnly] public SnakeBlock tail;
     [ReadOnly] public SnakeBlock head;
 
+    [ReadOnly] public int blocksIndex = 0;
+
     private Transform _transform;
 
     private void Awake()
@@ -53,7 +55,7 @@ public class Snake : MonoBehaviour
             _transform
         );
 
-        newBlock.Init(head, blockDescription);
+        newBlock.Init(head, blockDescription, blocksIndex++);
 
         if (head)
         {

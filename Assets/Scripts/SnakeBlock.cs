@@ -1,4 +1,6 @@
 using System;
+using DG.Tweening;
+using Effects;
 using MyBox;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,13 +31,52 @@ public class SnakeBlock : MonoBehaviour
         _transform = transform;
     }
 
-    public void Init(SnakeBlock child, BlockDescription blockDescription)
+    private void Update()
+    {
+        moveDuration += Time.deltaTime / _snake.GetBaseMovementDuration();
+
+        var nextPos = Vector3.Lerp(startingPoint, endPoint, moveDuration);
+
+        if (moveDuration > 1)
+        {
+            transform.position = endPoint;
+
+            StartMoving(endPoint, moveDuration - 1);
+        }
+        else
+        {
+            transform.position = nextPos;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if (!col.gameObject.CompareTag("Waiting Block"))
+            return;
+
+        var waitingBlock = col.gameObject.GetComponent<WaitingBlock>();
+        var position = waitingBlock.transform.position;
+        _snake.Prepend(position, waitingBlock.description);
+            
+        MyBox.Singleton<EffectsSpawner>.Instance.Attach(position);
+
+        Destroy(waitingBlock.gameObject);
+    }
+
+    public void Init(SnakeBlock child, BlockDescription blockDescription, int blocksIndex)
     {
         _child = child;
         description = blockDescription;
 
         _blockAnimator.StartLine(description.block, true);
         _tracksAnimator.StartLine(description.trackHorizontal, true);
+        
+        _blockAnimator.transform
+            .DOLocalMoveY(0.1f, 0.2f)
+            .SetRelative(true)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo)
+            .ManualUpdate(Time.time + 0.2f * (blocksIndex % 2), 0);
     }
 
     public void SetParent(SnakeBlock parent)
@@ -53,31 +94,17 @@ public class SnakeBlock : MonoBehaviour
         endPoint = nextPosition;
 
         var delta = (endPoint - startingPoint);
-        var tracksLine = (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+        var horizontal = Mathf.Abs(delta.x) > Mathf.Abs(delta.y);
+        var tracksLine = horizontal
             ? description.trackHorizontal
             : description.trackVertical;
+        var reverse = horizontal
+            ? delta.x < 0
+            : delta.y < 0;
 
-        _tracksAnimator.StartLine(tracksLine, true);
+        _tracksAnimator.StartLine(tracksLine, true, reverse);
 
         moveDuration = durationOffset;
-    }
-
-    private void Update()
-    {
-        moveDuration += Time.deltaTime / _snake.GetBaseMovementDuration();
-
-        var nextPos = Vector3.Lerp(startingPoint, endPoint, moveDuration);
-
-        if (moveDuration > 1)
-        {
-            transform.position = endPoint;
-
-            StartMoving(endPoint, moveDuration - 1);
-        }
-        else
-        {
-            transform.position = nextPos;
-        }
     }
 
     public bool IsHead => !_parent;
