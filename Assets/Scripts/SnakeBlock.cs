@@ -72,6 +72,13 @@ public class SnakeBlock : MonoBehaviour
                 Stop();
             }
         }
+        else if (col.gameObject.CompareTag("Obstacle"))
+        {
+            if (!IsHead)
+                return;
+            
+            snake.Die();
+        }
         else if (col.gameObject.CompareTag("Waiting Block"))
         {
             if (!IsHead)

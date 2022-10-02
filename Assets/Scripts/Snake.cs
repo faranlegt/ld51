@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using Cinemachine;
 using DG.Tweening;
-using Unity.Collections;
+using Effects;
+using MyBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,10 +19,12 @@ public class Snake : MonoBehaviour
     
     public CinemachineVirtualCamera followCamera;
 
-    [ReadOnly] public SnakeBlock tail;
-    [ReadOnly] public SnakeBlock head;
+    public bool requestDeath = false;
 
-    [ReadOnly] public int blocksIndex = 0;
+    [Unity.Collections.ReadOnly] public SnakeBlock tail;
+    [Unity.Collections.ReadOnly] public SnakeBlock head;
+
+    [Unity.Collections.ReadOnly] public int blocksIndex = 0;
 
     private Transform _transform;
 
@@ -27,17 +33,13 @@ public class Snake : MonoBehaviour
         _transform = transform;
     }
 
-    private void Start()
-    {
-        // DOTween
-        //     .Sequence()
-        //     .PrependInterval(10)
-        //     .SetLoops(-1)
-        //     .OnComplete(LoseTail);
-    }
-
     private void Update()
     {
+        if (requestDeath)
+        {
+            CheckDeath();
+        }
+        
         if (Keyboard.current.wKey.isPressed)
         {
             direction = Vector2.up;
@@ -66,6 +68,28 @@ public class Snake : MonoBehaviour
         {
             Restart();
         }
+    }
+
+    private void CheckDeath()
+    {
+        var n = head;
+        List<SnakeBlock> blocks = new();
+
+        while (n)
+        {
+            if (!n.isStopped) return;
+
+            blocks.Add(n);
+            
+            n = n.child;
+        }
+        
+        foreach (var b in blocks)
+        {
+            Singleton<EffectsSpawner>.Instance.Poof(b.transform.position);
+        }
+        
+        Destroy(gameObject);
     }
 
     public SnakeBlock Prepend(Vector3 position, BlockDescription blockDescription)
@@ -143,6 +167,12 @@ public class Snake : MonoBehaviour
         }
 
         Destroy(next.gameObject);
+    }
+
+    public void Die()
+    {
+        requestDeath = true;
+        head.Stop();
     }
 
     public float GetBaseMovementDuration() => 1 / baseSpeed;
