@@ -539,8 +539,9 @@ GameObject:
   m_Component:
   - component: {fileID: 766360341}
   - component: {fileID: 766360340}
+  - component: {fileID: 766360342}
   m_Layer: 0
-  m_Name: Effects
+  m_Name: managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -562,6 +563,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 11400000, guid: fc10f5dd2a4a2467dab8ec5d05e466f3, type: 2}
   poofEffect: {fileID: 11400000, guid: c937250aad5f44981992575f9eb7661e, type: 2}
   attachEffect: {fileID: 11400000, guid: 849bb4b1394bd4aea80cc8650f4bbacf, type: 2}
+  shootEffect: {fileID: 11400000, guid: 096b93e5273d84226a6a9dd1e0e6eccf, type: 2}
 --- !u!4 &766360341
 Transform:
   m_ObjectHideFlags: 0
@@ -577,6 +579,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766360342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766360339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a30a60cd5104efca0cef89204edcd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4195157893674637817, guid: aa256ef186aa642c5be5c91f936720ab, type: 3}
 --- !u!1001 &834649084
 PrefabInstance:
   m_ObjectHideFlags: 0

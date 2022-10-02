@@ -1,11 +1,13 @@
 using System;
 using DG.Tweening;
+using Emitters.Bullets;
+using MyBox;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace DetachedBlocks
 {
-    public class Spider : MonoBehaviour, IExplosionListener
+    public class Spider : MonoBehaviour, IExplosionListener, IBulletReceiver
     {
         [Header("Lines")] public SpritesLine enabling;
         public SpritesLine walking;
@@ -16,6 +18,11 @@ namespace DetachedBlocks
 
         [Space, Header("Movement")] public float moveDuration = 1f;
         public Ease moveEase = Ease.Linear;
+
+        [Space, Header("Shoot")] public float shootDelay = 3f;
+        public BulletDescription bullet;
+
+        public Transform bulletStart;
 
         private void Start()
         {
@@ -40,6 +47,22 @@ namespace DetachedBlocks
                 .PrependInterval(moveDuration)
                 .SetLoops(-1)
                 .OnStepComplete(Move);
+
+            DOTween
+                .Sequence()
+                .PrependInterval(shootDelay)
+                .SetLoops(-1)
+                .OnStepComplete(Shoot);
+        }
+
+        private void Shoot()
+        {
+            Singleton<Bullets>.Instance.Shoot(
+                bullet,
+                bulletStart.position,
+                Random.insideUnitCircle.normalized,
+                true
+            );
         }
 
         private void Move()
@@ -67,6 +90,16 @@ namespace DetachedBlocks
         public void Explode()
         {
             Destroy(gameObject);
+        }
+
+        public bool Shoot(Bullet b)
+        {
+            if (!b.isFromPlayer)
+                return false;
+
+            Destroy(gameObject);
+
+            return true;
         }
     }
 }

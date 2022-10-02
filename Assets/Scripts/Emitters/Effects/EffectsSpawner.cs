@@ -10,6 +10,7 @@ namespace Effects
         [Space] public SpritesLine explosionEffect;
         public SpritesLine poofEffect;
         public SpritesLine attachEffect;
+        public SpritesLine shootEffect;
 
         private Transform _transform;
 
@@ -24,6 +25,8 @@ namespace Effects
         }
 
         public void Poof(Vector3 position) => CustomEffect(position, poofEffect);
+        
+        public void Shoot(Vector3 position) => CustomEffect(position, shootEffect);
 
         public void Attach(Vector3 position) => CustomEffect(position, poofEffect);
 

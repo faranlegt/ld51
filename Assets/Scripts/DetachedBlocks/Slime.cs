@@ -1,11 +1,12 @@
 using System;
 using DG.Tweening;
+using Emitters.Bullets;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace DetachedBlocks
 {
-    public class Slime : MonoBehaviour, IExplosionListener
+    public class Slime : MonoBehaviour, IExplosionListener, IBulletReceiver
     {
         public Slime slime;
 
@@ -52,6 +53,16 @@ namespace DetachedBlocks
         public void Explode()
         {
             Destroy(gameObject);
+        }
+
+        public bool Shoot(Bullet b)
+        {
+            if (!b.isFromPlayer)
+                return false;
+
+            Destroy(gameObject);
+
+            return true;
         }
     }
 }
