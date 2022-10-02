@@ -25,11 +25,11 @@ namespace DetachedBlocks
             foreach (var col in found)
             {
                 var go = col.gameObject;
-
-                if (go.CompareTag("Snake Block"))
+                IExplosionListener[] listeners = go.GetComponents<IExplosionListener>();
+                
+                foreach (var explosionListener in listeners)
                 {
-                    var block = go.GetComponent<SnakeBlock>();
-                    block.snake.RemoveBlock(block);
+                    explosionListener.Explode();
                 }
             }
 

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace SnakeBlocks
 {
-    public class SnakeBlock : MonoBehaviour
+    public class SnakeBlock : MonoBehaviour, IExplosionListener
     {
         public BlockDescription description;
 
@@ -189,6 +189,11 @@ namespace SnakeBlocks
             {
                 child.Restart();
             }
+        }
+
+        public void Explode()
+        {
+            snake.RemoveBlock(this);
         }
 
         public void Detach()

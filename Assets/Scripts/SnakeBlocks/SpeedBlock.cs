@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SnakeBlocks
 {
-    public class EngineBlock : SnakeBlock
+    public class SpeedBlock : SnakeBlock
     {
         [Space]
         public SpeedModification mod = new();
