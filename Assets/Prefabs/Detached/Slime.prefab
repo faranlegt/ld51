@@ -134,9 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c82b2dde6ab422ba7feca477bb48510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slime: {fileID: 7189556899289793448}
+  movesToRespawn: 10
   moveTimer: 3
   moveEase: 9
   moveDuration: 1
+  movesCount: 0
 --- !u!61 &7042993495901964627
 BoxCollider2D:
   m_ObjectHideFlags: 0
