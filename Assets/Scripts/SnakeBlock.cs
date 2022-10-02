@@ -139,6 +139,11 @@ public class SnakeBlock : MonoBehaviour
         if (!isStopped)
             return;
 
+        if (moveDuration == 0)
+        {
+            StartMoving(transform.position);
+        }
+
         isStopped = false;
 
         _movementTween.Play();
