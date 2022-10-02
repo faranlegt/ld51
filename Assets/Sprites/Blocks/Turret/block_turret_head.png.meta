@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: block_turret_head_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b83fb5f729b4e48a680547a72526b6
+      internalID: 1883321279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_head_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8965c144e08421fb5e6d7911f4edce
+      internalID: -1703042639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_head_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78ed57d9d19b451abdca6fb445beee8
+      internalID: 533611516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_head_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497a350c010ea4ffeb4afb78b86b6de3
+      internalID: 1778290809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_head_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35118e5b772b4463bab08cbca26639b8
+      internalID: -1254709563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block_turret_head_3: 1778290809
+      block_turret_head_4: -1254709563
+      block_turret_head_0: 1883321279
+      block_turret_head_1: -1703042639
+      block_turret_head_2: 533611516
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

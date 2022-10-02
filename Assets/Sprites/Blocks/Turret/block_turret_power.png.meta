@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: block_turret_power_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89a6de3670124690862313d4087f190
+      internalID: 1421223696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_power_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de56d8d788764fcdac1bad3a600c964
+      internalID: -1259309763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_power_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0c16c2b7c094e84a76ab196e3642fb
+      internalID: -694431726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_power_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88dd8d8b549a44fd98c34b938159c84f
+      internalID: -1573368104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_power_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da4595e1e1fc46569dc8c4292a5a16a
+      internalID: -1150900217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_turret_power_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d549d5e051424f598c9f6df15c41ad8
+      internalID: 1471315320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block_turret_power_3: -1573368104
+      block_turret_power_1: -1259309763
+      block_turret_power_5: 1471315320
+      block_turret_power_0: 1421223696
+      block_turret_power_4: -1150900217
+      block_turret_power_2: -694431726
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

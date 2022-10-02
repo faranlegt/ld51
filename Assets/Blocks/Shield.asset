@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8e1633be804e87a3fbef3c1a21f660, type: 3}
+  m_Name: Shield
+  m_EditorClassIdentifier: 
+  block: {fileID: 11400000, guid: 7219b850729d64bf1b6fd73f1d92ea25, type: 2}
+  blockWaiting: {fileID: -1185602609, guid: 96d27e6f965c049e98ff2512b2292e20, type: 3}
+  trackHorizontal: {fileID: 11400000, guid: 3b01e4e8e58cf43bca87e317b736c5a2, type: 2}
+  trackVertical: {fileID: 11400000, guid: e7b490361668a44bc95147685f478535, type: 2}
+  baseBlock: {fileID: 5018024698631317523, guid: 1d9c29b25693848f4bc93ba93a3c249c, type: 3}
+  poofOnDetach: 1
+  detachedBlock: {fileID: 6721958678199956381, guid: a9a362e01a46d42c8b693366b7525892, type: 3}

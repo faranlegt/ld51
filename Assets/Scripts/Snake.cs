@@ -14,7 +14,7 @@ public class Snake : MonoBehaviour
     public Stats stats = new();
 
     public Vector2 direction = Vector2.right;
-    
+
     public CinemachineVirtualCamera followCamera;
 
     public bool requestDeath = false;
@@ -32,15 +32,15 @@ public class Snake : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
         if (requestDeath)
         {
             CheckDeath();
         }
-        
+
         stats.speed = baseSpeed;
         head.Modify(stats);
-        
+
         if (Keyboard.current.wKey.isPressed)
         {
             direction = Vector2.up;
@@ -74,18 +74,19 @@ public class Snake : MonoBehaviour
 
         while (n)
         {
-            if (!n.isStopped) return;
+            if (!n.isStopped)
+                return;
 
             blocks.Add(n);
-            
+
             n = n.child;
         }
-        
+
         foreach (var b in blocks)
         {
             Singleton<EffectsSpawner>.Instance.Poof(b.transform.position);
         }
-        
+
         Destroy(gameObject);
     }
 
@@ -104,7 +105,7 @@ public class Snake : MonoBehaviour
         {
             head.SetParent(newBlock);
         }
-        
+
         head = newBlock;
 
         if (!tail)
@@ -151,10 +152,10 @@ public class Snake : MonoBehaviour
         {
             var p = block.parent;
             var c = block.child;
-            
+
             p.child = c;
             c.parent = p;
-            
+
             c.StartMoving(c.transform.position, c.moveDuration);
         }
 
@@ -167,5 +168,5 @@ public class Snake : MonoBehaviour
         head.Stop();
     }
 
-    public Vector3 GetNextPosition() => head.transform.position + (Vector3)direction;
+    public Vector3 GetNextPosition() => (head.transform.position + (Vector3)direction).SnapToOne();
 }

@@ -1,4 +1,6 @@
 using System;
+using Effects;
+using MyBox;
 using UnityEngine;
 
 namespace Emitters.Bullets
@@ -34,13 +36,17 @@ namespace Emitters.Bullets
         private void OnCollisionEnter2D(Collision2D col)
         {
             IBulletReceiver[] receivers = col.gameObject.GetComponents<IBulletReceiver>();
+            var shot = false;
 
             foreach (var r in receivers)
             {
-                if (r.Shoot(this))
-                {
-                    Destroy(gameObject);
-                }
+                shot |= r.Shoot(this);
+            }
+
+            if (shot)
+            {
+                Destroy(gameObject);
+                Singleton<EffectsSpawner>.Instance.Poof(transform.position);
             }
         }
     }

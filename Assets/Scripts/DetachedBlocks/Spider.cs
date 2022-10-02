@@ -35,6 +35,7 @@ namespace DetachedBlocks
 
         private void Activate()
         {
+            gameObject.tag = "Obstacle";
             body.onFinished.RemoveAllListeners();
 
             legs.gameObject.SetActive(true);

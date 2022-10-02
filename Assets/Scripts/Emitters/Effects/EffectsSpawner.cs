@@ -19,9 +19,9 @@ namespace Effects
             _transform = transform;
         }
 
-        public void Explode(Vector3 position)
+        public void Explode(Vector3 position, float size = 2)
         {
-            CustomEffect(position, explosionEffect).transform.localScale = Vector3.one * 2;
+            CustomEffect(position, explosionEffect).transform.localScale = Vector3.one * size;
         }
 
         public void Poof(Vector3 position) => CustomEffect(position, poofEffect);

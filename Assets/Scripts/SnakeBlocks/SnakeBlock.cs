@@ -39,13 +39,13 @@ namespace SnakeBlocks
         private Tween _movementTween;
 
 
-        private void Awake()
+        public void Awake()
         {
             snake = GetComponentInParent<Snake>();
             _transform = transform;
         }
 
-        private void Update()
+        public virtual void Update()
         {
             if (isStopped)
             {
