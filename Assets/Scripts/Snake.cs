@@ -54,9 +54,17 @@ public class Snake : MonoBehaviour
         {
             direction = Vector2.right;
         }
-        if (Keyboard.current.xKey.wasPressedThisFrame)
+        if (Keyboard.current.cKey.wasPressedThisFrame)
         {
             LoseTail();
+        }
+        if (Keyboard.current.zKey.wasPressedThisFrame)
+        {
+            Stop();
+        }
+        if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            Restart();
         }
     }
 
@@ -90,10 +98,12 @@ public class Snake : MonoBehaviour
         return newBlock;
     }
 
+    public void Stop() => head.Stop();
+
+    public void Restart() => head.Restart();
+
     public void LoseTail()
     {
-        Debug.Log("Lose tail");
-        
         if (tail == head)
         {
             Debug.LogError("Oooops, lose");

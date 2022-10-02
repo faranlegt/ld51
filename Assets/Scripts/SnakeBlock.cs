@@ -14,6 +14,8 @@ public class SnakeBlock : MonoBehaviour
 
     [ReadOnly] public float moveDuration;
 
+    public bool isStopped;
+
     [Space, Header("Renderers"), MustBeAssigned]
     public LineAnimator _blockAnimator;
 
@@ -26,6 +28,8 @@ public class SnakeBlock : MonoBehaviour
     private Snake _snake;
     private Transform _transform;
 
+    private Tween _movementTween;
+
 
     private void Awake()
     {
@@ -35,6 +39,11 @@ public class SnakeBlock : MonoBehaviour
 
     private void Update()
     {
+        if (isStopped)
+        {
+            return;
+        }
+
         moveDuration += Time.deltaTime / _snake.GetBaseMovementDuration();
 
         var nextPos = Vector3.Lerp(startingPoint, endPoint, moveDuration);
@@ -53,16 +62,33 @@ public class SnakeBlock : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        if (!col.gameObject.CompareTag("Waiting Block"))
-            return;
+        if (col.gameObject.CompareTag("Snake Block"))
+        {
+            var block = col.gameObject.GetComponent<SnakeBlock>();
 
-        var waitingBlock = col.gameObject.GetComponent<WaitingBlock>();
-        var position = waitingBlock.transform.position;
-        _snake.Prepend(position, waitingBlock.description);
+            if (block.child == this && block.isStopped)
+            {
+                Stop();
+            }
+        }
+        else if (col.gameObject.CompareTag("Waiting Block"))
+        {
+            if (!IsHead) return;
+            
+            var waitingBlock = col.gameObject.GetComponent<WaitingBlock>();
+            var position = waitingBlock.transform.position;
+            var newBlock = _snake.Prepend(position, waitingBlock.description);
 
-        Singleton<EffectsSpawner>.Instance.Attach(position);
+            DOTween
+                .Sequence()
+                .PrependInterval(0.5f)
+                .OnStart(newBlock.Stop)
+                .OnComplete(newBlock.Restart);
 
-        Destroy(waitingBlock.gameObject);
+            Singleton<EffectsSpawner>.Instance.Attach(position);
+
+            Destroy(waitingBlock.gameObject);
+        }
     }
 
     public void Init(SnakeBlock newChild, BlockDescription blockDescription, int blocksIndex)
@@ -73,12 +99,52 @@ public class SnakeBlock : MonoBehaviour
         _blockAnimator.StartLine(description.block, true);
         _tracksAnimator.StartLine(description.trackHorizontal, true);
 
-        _blockAnimator.transform
+        _movementTween = _blockAnimator.transform
             .DOLocalMoveY(0.1f, 0.2f)
             .SetRelative(true)
             .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo)
-            .ManualUpdate(Time.time + 0.2f * (blocksIndex % 2), 0);
+            .SetLoops(-1, LoopType.Yoyo);
+
+        _movementTween.OnPause(
+            () => DOTween
+                .Sequence()
+                .Append(
+                    _blockAnimator
+                        .transform
+                        .DOLocalMove((endPoint - startingPoint).normalized * 0.2f, 0.2f)
+                        .SetRelative(true)
+                        .SetEase(Ease.OutQuart)
+                ).Append(
+                    _blockAnimator
+                        .transform
+                        .DOLocalMove(-(endPoint - startingPoint).normalized * 0.2f, 0.2f)
+                        .SetRelative(true)
+                        .SetEase(Ease.Linear)
+                )
+        );
+
+        _movementTween.ManualUpdate(Time.time + 0.2f * (blocksIndex % 2), 0);
+    }
+
+    public void Stop()
+    {
+        isStopped = true;
+        _movementTween.Pause();
+    }
+
+    public void Restart()
+    {
+        if (!isStopped)
+            return;
+
+        isStopped = false;
+
+        _movementTween.Play();
+
+        if (child)
+        {
+            child.Restart();
+        }
     }
 
     public void Detach()

@@ -22,7 +22,7 @@ namespace Effects
 
         public void Poof(Vector3 position) => CustomEffect(position, poofEffect);
 
-        public void Attach(Vector3 position) => CustomEffect(position, attachEffect);
+        public void Attach(Vector3 position) => CustomEffect(position, poofEffect);
 
         private void CustomEffect(Vector3 position, SpritesLine line)
         {
