@@ -16,3 +16,6 @@ MonoBehaviour:
   blockWaiting: {fileID: -1178203834, guid: c300c9e2268a447679b4eb2a910546ac, type: 3}
   trackHorizontal: {fileID: 11400000, guid: 3b01e4e8e58cf43bca87e317b736c5a2, type: 2}
   trackVertical: {fileID: 11400000, guid: e7b490361668a44bc95147685f478535, type: 2}
+  baseBlock: {fileID: 2442512535949612491, guid: cf990627971d5482c86009c35fbd122a, type: 3}
+  poofOnDetach: 1
+  detachedBlock: {fileID: 6721958678199956381, guid: 8f012f60669cc443183c9e3e5c159640, type: 3}

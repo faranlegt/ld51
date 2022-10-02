@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using DG.Tweening;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,6 +27,15 @@ public class Snake : MonoBehaviour
         _transform = transform;
     }
 
+    private void Start()
+    {
+        // DOTween
+        //     .Sequence()
+        //     .PrependInterval(10)
+        //     .SetLoops(-1)
+        //     .OnComplete(LoseTail);
+    }
+
     private void Update()
     {
         if (Keyboard.current.wKey.isPressed)
@@ -43,6 +53,10 @@ public class Snake : MonoBehaviour
         if (Keyboard.current.dKey.isPressed)
         {
             direction = Vector2.right;
+        }
+        if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            LoseTail();
         }
     }
 
@@ -74,6 +88,21 @@ public class Snake : MonoBehaviour
         followCamera.Follow = newBlock.transform;
 
         return newBlock;
+    }
+
+    public void LoseTail()
+    {
+        Debug.Log("Lose tail");
+        
+        if (tail == head)
+        {
+            Debug.LogError("Oooops, lose");
+            return;
+        }
+
+        tail.Detach();
+
+        tail = tail.parent;
     }
 
     public float GetBaseMovementDuration() => 1 / baseSpeed;

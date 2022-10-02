@@ -2,7 +2,6 @@ using System;
 using DG.Tweening;
 using Effects;
 using MyBox;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SnakeBlock : MonoBehaviour
@@ -20,8 +19,11 @@ public class SnakeBlock : MonoBehaviour
 
     [MustBeAssigned] public LineAnimator _tracksAnimator;
 
+    [Header("Connections"), ReadOnly] public SnakeBlock parent;
+
+    [ReadOnly] public SnakeBlock child;
+
     private Snake _snake;
-    private SnakeBlock _parent, _child;
     private Transform _transform;
 
 
@@ -57,20 +59,20 @@ public class SnakeBlock : MonoBehaviour
         var waitingBlock = col.gameObject.GetComponent<WaitingBlock>();
         var position = waitingBlock.transform.position;
         _snake.Prepend(position, waitingBlock.description);
-            
-        MyBox.Singleton<EffectsSpawner>.Instance.Attach(position);
+
+        Singleton<EffectsSpawner>.Instance.Attach(position);
 
         Destroy(waitingBlock.gameObject);
     }
 
-    public void Init(SnakeBlock child, BlockDescription blockDescription, int blocksIndex)
+    public void Init(SnakeBlock newChild, BlockDescription blockDescription, int blocksIndex)
     {
-        _child = child;
+        child = newChild;
         description = blockDescription;
 
         _blockAnimator.StartLine(description.block, true);
         _tracksAnimator.StartLine(description.trackHorizontal, true);
-        
+
         _blockAnimator.transform
             .DOLocalMoveY(0.1f, 0.2f)
             .SetRelative(true)
@@ -79,16 +81,35 @@ public class SnakeBlock : MonoBehaviour
             .ManualUpdate(Time.time + 0.2f * (blocksIndex % 2), 0);
     }
 
-    public void SetParent(SnakeBlock parent)
+    public void Detach()
     {
-        _parent = parent;
+        if (description.poofOnDetach)
+        {
+            Singleton<EffectsSpawner>.Instance.Poof(transform.position);
+        }
+
+        if (description.detachedBlock)
+        {
+            Instantiate(
+                description.detachedBlock,
+                _transform.position.SnapToOne(),
+                Quaternion.identity
+            );
+        }
+
+        Destroy(gameObject);
+    }
+
+    public void SetParent(SnakeBlock p)
+    {
+        parent = p;
     }
 
     public void StartMoving(Vector3 from, float durationOffset = 0f)
     {
         var nextPosition = IsHead
             ? _snake.GetNextPosition()
-            : _parent.transform.position;
+            : parent.transform.position;
 
         startingPoint = from;
         endPoint = nextPosition;
@@ -107,5 +128,5 @@ public class SnakeBlock : MonoBehaviour
         moveDuration = durationOffset;
     }
 
-    public bool IsHead => !_parent;
+    public bool IsHead => !parent;
 }
