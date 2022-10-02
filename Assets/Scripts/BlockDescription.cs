@@ -1,3 +1,4 @@
+using SnakeBlocks;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Block", menuName = "Snakur/Block")]

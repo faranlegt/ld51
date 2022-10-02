@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Engine Detach
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2052778347, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: -914798018, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: -2123454704, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 1356172068, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 241638058, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: -483043189, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 974002160, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 254936908, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 1382652618, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: -2031898666, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: -1700308462, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}
+  - {fileID: 717528500, guid: 6cbded49bcee74a73a3612cf104f0f46, type: 3}

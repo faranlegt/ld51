@@ -1,9 +1,9 @@
-using System;
 using Effects;
 using MyBox;
+using SnakeBlocks;
 using UnityEngine;
 
-namespace Blocks
+namespace DetachedBlocks
 {
     public class Tnt : MonoBehaviour
     {

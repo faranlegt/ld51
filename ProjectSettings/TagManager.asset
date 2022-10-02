@@ -7,6 +7,7 @@ TagManager:
   - Waiting Block
   - Snake Block
   - Obstacle
+  - Modifier
   layers:
   - Default
   - TransparentFX

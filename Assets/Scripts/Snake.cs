@@ -1,19 +1,17 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using Cinemachine;
-using DG.Tweening;
 using Effects;
+using Modifiers;
 using MyBox;
+using SnakeBlocks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Snake : MonoBehaviour
 {
-    public SnakeBlock blockTemplate;
-
     public float baseSpeed = 4f;
+
+    public Stats stats = new();
 
     public Vector2 direction = Vector2.right;
     
@@ -21,10 +19,10 @@ public class Snake : MonoBehaviour
 
     public bool requestDeath = false;
 
-    [Unity.Collections.ReadOnly] public SnakeBlock tail;
-    [Unity.Collections.ReadOnly] public SnakeBlock head;
+    [ReadOnly] public SnakeBlock tail;
+    [ReadOnly] public SnakeBlock head;
 
-    [Unity.Collections.ReadOnly] public int blocksIndex = 0;
+    [ReadOnly] public int blocksIndex = 0;
 
     private Transform _transform;
 
@@ -34,11 +32,14 @@ public class Snake : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         if (requestDeath)
         {
             CheckDeath();
         }
+        
+        stats.speed = baseSpeed;
+        head.Modify(stats);
         
         if (Keyboard.current.wKey.isPressed)
         {
@@ -95,7 +96,7 @@ public class Snake : MonoBehaviour
     public SnakeBlock Prepend(Vector3 position, BlockDescription blockDescription)
     {
         var newBlock = Instantiate(
-            blockTemplate,
+            blockDescription.baseBlock,
             position,
             Quaternion.identity,
             _transform
@@ -174,8 +175,6 @@ public class Snake : MonoBehaviour
         requestDeath = true;
         head.Stop();
     }
-
-    public float GetBaseMovementDuration() => 1 / baseSpeed;
 
     public Vector3 GetNextPosition() => head.transform.position + (Vector3)direction;
 }
