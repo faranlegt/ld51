@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: 7e09592661aea4b77bb8cd3bd50be091
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 17
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3388b700a9f6e469091266e296556d14
+      internalID: 2051013132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 120
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42234579a63c6483eb2014b99c3321fb
+      internalID: 2007911665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 120
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e50ae425323b459d8655e7b444413ff
+      internalID: 1626026143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 120
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea1df5d808444d838c398563c1863d2
+      internalID: 767689243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 120
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7166cb447484cbda5d85cbff9a4122
+      internalID: 187316588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093c5c37b3aa24f1da47fe79cb8d5809
+      internalID: 95449062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 80
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab69567ea830473f9ecc65b2aab1a38
+      internalID: 1648905341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_7
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 80
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9be6a69b0a545c584e0be33a6f8a28
+      internalID: -622008288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_8
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 80
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06180ad3aafeb416ab0b26cb4b704c0a
+      internalID: -1278364244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 80
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7e6387e5cba40caa6cd028d5cd534d
+      internalID: 656071185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5c3085a385e4080bf21dc83f8cc97c
+      internalID: -1291104219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37cfc8448f904349ab214b3fa1ba8dc
+      internalID: 1602029759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_12
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38976b4fd59194ded8accdf8cb8a1021
+      internalID: -315225969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84e612c4f2754f1f945957aff81fc5d
+      internalID: -851865199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 40
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80bc3dfa61e4b46b09e827ae46376be5
+      internalID: -1341490150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_active_tnt_fuse_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7fa8dd2d6443d3b160048edbdf7d7
+      internalID: 982744400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      block_active_tnt_fuse_6: 1648905341
+      block_active_tnt_fuse_8: -1278364244
+      block_active_tnt_fuse_5: 95449062
+      block_active_tnt_fuse_3: 767689243
+      block_active_tnt_fuse_15: 982744400
+      block_active_tnt_fuse_4: 187316588
+      block_active_tnt_fuse_10: -1291104219
+      block_active_tnt_fuse_0: 2051013132
+      block_active_tnt_fuse_9: 656071185
+      block_active_tnt_fuse_11: 1602029759
+      block_active_tnt_fuse_12: -315225969
+      block_active_tnt_fuse_2: 1626026143
+      block_active_tnt_fuse_13: -851865199
+      block_active_tnt_fuse_1: 2007911665
+      block_active_tnt_fuse_14: -1341490150
+      block_active_tnt_fuse_7: -622008288
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

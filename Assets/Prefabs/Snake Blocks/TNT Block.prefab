@@ -296,7 +296,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   child: {fileID: 0}
   snake: {fileID: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 11400000, guid: bce4cc26ca8f0460eb285439bfb0a684, type: 2}
 --- !u!1 &5416300405681621137
 GameObject:
   m_ObjectHideFlags: 0
