@@ -18,15 +18,20 @@ namespace Effects
             _transform = transform;
         }
 
-        public void Explode(Vector3 position) => CustomEffect(position, explosionEffect);
+        public void Explode(Vector3 position)
+        {
+            CustomEffect(position, explosionEffect).transform.localScale = Vector3.one * 2;
+        }
 
         public void Poof(Vector3 position) => CustomEffect(position, poofEffect);
 
         public void Attach(Vector3 position) => CustomEffect(position, poofEffect);
 
-        private void CustomEffect(Vector3 position, SpritesLine line)
+        private Effect CustomEffect(Vector3 position, SpritesLine line)
         {
-            Instantiate(effectPrefab, position, Quaternion.identity, _transform).Init(line);
+            var o = Instantiate(effectPrefab, position, Quaternion.identity, _transform);
+            o.Init(line);
+            return o;
         }
     }
 }

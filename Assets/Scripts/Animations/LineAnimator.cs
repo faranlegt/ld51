@@ -12,7 +12,7 @@ public class LineAnimator : MonoBehaviour
     public bool animate;
     public float frameLength = 1f;
 
-    public UnityEvent finished;
+    public UnityEvent onFinished;
 
     private SpriteRenderer _renderer;
     private SpritesLine _oldSprites;
@@ -25,7 +25,7 @@ public class LineAnimator : MonoBehaviour
     {
         _renderer = GetComponent<SpriteRenderer>();
         
-        finished ??= new UnityEvent();
+        onFinished ??= new UnityEvent();
 
         SyncSprite();
     }
@@ -90,7 +90,7 @@ public class LineAnimator : MonoBehaviour
                 else
                 {
                     animate = false;
-                    finished?.Invoke();
+                    onFinished?.Invoke();
                 }
             }
             else
@@ -109,7 +109,7 @@ public class LineAnimator : MonoBehaviour
                 else
                 {
                     animate = false;
-                    finished?.Invoke();
+                    onFinished?.Invoke();
                 }
             }
             else

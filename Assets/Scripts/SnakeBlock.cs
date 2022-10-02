@@ -25,7 +25,8 @@ public class SnakeBlock : MonoBehaviour
 
     [ReadOnly] public SnakeBlock child;
 
-    private Snake _snake;
+    [ReadOnly] public Snake snake;
+    
     private Transform _transform;
 
     private Tween _movementTween;
@@ -33,7 +34,7 @@ public class SnakeBlock : MonoBehaviour
 
     private void Awake()
     {
-        _snake = GetComponentInParent<Snake>();
+        snake = GetComponentInParent<Snake>();
         _transform = transform;
     }
 
@@ -44,7 +45,7 @@ public class SnakeBlock : MonoBehaviour
             return;
         }
 
-        moveDuration += Time.deltaTime / _snake.GetBaseMovementDuration();
+        moveDuration += Time.deltaTime / snake.GetBaseMovementDuration();
 
         var nextPos = Vector3.Lerp(startingPoint, endPoint, moveDuration);
 
@@ -73,11 +74,12 @@ public class SnakeBlock : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("Waiting Block"))
         {
-            if (!IsHead) return;
-            
+            if (!IsHead)
+                return;
+
             var waitingBlock = col.gameObject.GetComponent<WaitingBlock>();
             var position = waitingBlock.transform.position;
-            var newBlock = _snake.Prepend(position, waitingBlock.description);
+            var newBlock = snake.Prepend(position, waitingBlock.description);
 
             DOTween
                 .Sequence()
@@ -174,7 +176,7 @@ public class SnakeBlock : MonoBehaviour
     public void StartMoving(Vector3 from, float durationOffset = 0f)
     {
         var nextPosition = IsHead
-            ? _snake.GetNextPosition()
+            ? snake.GetNextPosition()
             : parent.transform.position;
 
         startingPoint = from;

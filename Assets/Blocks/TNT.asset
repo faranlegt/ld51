@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8e1633be804e87a3fbef3c1a21f660, type: 3}
+  m_Name: TNT
+  m_EditorClassIdentifier: 
+  block: {fileID: 11400000, guid: 6db4f7ae399b249ff86e5380cac3ffa1, type: 2}
+  blockWaiting: {fileID: -1178203834, guid: c300c9e2268a447679b4eb2a910546ac, type: 3}
+  trackHorizontal: {fileID: 11400000, guid: 3b01e4e8e58cf43bca87e317b736c5a2, type: 2}
+  trackVertical: {fileID: 11400000, guid: e7b490361668a44bc95147685f478535, type: 2}
+  baseBlock: {fileID: 2442512535949612491, guid: cf990627971d5482c86009c35fbd122a, type: 3}
+  poofOnDetach: 1
+  detachedBlock: {fileID: 4038100093052791179, guid: 11f637cb092c14eb4b927a3deb25a529, type: 3}

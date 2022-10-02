@@ -115,6 +115,36 @@ public class Snake : MonoBehaviour
         tail = tail.parent;
     }
 
+    public void RemoveBlock(SnakeBlock block)
+    {
+        var next = head;
+
+        while (next != block)
+            next = next.child;
+
+        if (next == head)
+        {
+            head = next.child;
+            followCamera.Follow = head.transform;
+        }
+        else if (next == tail)
+        {
+            tail = next.parent;
+        }
+        else
+        {
+            var p = next.parent;
+            var c = next.child;
+            
+            p.child = c;
+            c.parent = p;
+            
+            c.StartMoving(c.transform.position, c.moveDuration);
+        }
+
+        Destroy(next.gameObject);
+    }
+
     public float GetBaseMovementDuration() => 1 / baseSpeed;
 
     public Vector3 GetNextPosition() => head.transform.position + (Vector3)direction;

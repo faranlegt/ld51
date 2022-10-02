@@ -14,7 +14,7 @@ namespace Effects
 
         public void Init(SpritesLine line)
         {
-            _animator.finished.AddListener(Die);
+            _animator.onFinished.AddListener(Die);
             _animator.StartLine(line, false);
         }
 
