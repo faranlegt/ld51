@@ -25,6 +25,8 @@ namespace DetachedBlocks
             foreach (var col in found)
             {
                 var go = col.gameObject;
+                if (!go) continue;
+                
                 IExplosionListener[] listeners = go.GetComponents<IExplosionListener>();
                 
                 foreach (var explosionListener in listeners)

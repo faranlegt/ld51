@@ -62,7 +62,7 @@ namespace DetachedBlocks
                 bullet,
                 bulletStart.position,
                 Random.insideUnitCircle.normalized,
-                true
+                false
             );
         }
 
