@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Spider Legs
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1680492701, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: 1572024984, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: 1948514125, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: -744833613, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: 1109696556, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: 244644183, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: -753260286, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}
+  - {fileID: -497182796, guid: 16a9732a29c9a49959e6ade5b95fdd91, type: 3}

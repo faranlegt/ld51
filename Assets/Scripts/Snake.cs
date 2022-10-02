@@ -63,11 +63,7 @@ public class Snake : MonoBehaviour
         }
         if (Keyboard.current.zKey.wasPressedThisFrame)
         {
-            Stop();
-        }
-        if (Keyboard.current.xKey.wasPressedThisFrame)
-        {
-            Restart();
+            head.Activate();
         }
     }
 
@@ -142,24 +138,19 @@ public class Snake : MonoBehaviour
 
     public void RemoveBlock(SnakeBlock block)
     {
-        var next = head;
-
-        while (next != block)
-            next = next.child;
-
-        if (next == head)
+        if (block == head)
         {
-            head = next.child;
+            head = block.child;
             followCamera.Follow = head.transform;
         }
-        else if (next == tail)
+        else if (block == tail)
         {
-            tail = next.parent;
+            tail = block.parent;
         }
         else
         {
-            var p = next.parent;
-            var c = next.child;
+            var p = block.parent;
+            var c = block.child;
             
             p.child = c;
             c.parent = p;
@@ -167,7 +158,7 @@ public class Snake : MonoBehaviour
             c.StartMoving(c.transform.position, c.moveDuration);
         }
 
-        Destroy(next.gameObject);
+        Destroy(block.gameObject);
     }
 
     public void Die()

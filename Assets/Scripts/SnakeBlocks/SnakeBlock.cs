@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Effects;
+using Emitters.Bullets;
 using Modifiers;
 using MyBox;
 using UnityEngine;
 
 namespace SnakeBlocks
 {
-    public class SnakeBlock : MonoBehaviour, IExplosionListener
+    public class SnakeBlock : MonoBehaviour, IExplosionListener, IBulletReceiver
     {
         public BlockDescription description;
 
@@ -196,6 +197,16 @@ namespace SnakeBlocks
             snake.RemoveBlock(this);
         }
 
+        public bool Shoot(Bullet b)
+        {
+            if (b.isFromPlayer)
+                return false;
+
+            snake.RemoveBlock(this);
+            
+            return true;
+        }
+
         public void Detach()
         {
             if (description.poofOnDetach)
@@ -227,6 +238,8 @@ namespace SnakeBlocks
                 child.Modify(stats);
             }
         }
+
+        public virtual void Activate() { }
 
         public void StartMoving(Vector3 from, float durationOffset = 0f)
         {
