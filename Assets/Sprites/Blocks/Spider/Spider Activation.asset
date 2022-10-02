@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Spider Activation
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1893874836, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: 263288374, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -449248242, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -2026523200, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -2086941597, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -1756613865, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -1407334532, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -770274803, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: 612811705, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -1690526859, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -1124927275, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}
+  - {fileID: -19340471, guid: 0b547dbff0f7b49a9b45674114b7eda8, type: 3}

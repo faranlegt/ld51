@@ -228,6 +228,8 @@ namespace SnakeBlocks
             }
         }
 
+        public virtual void Activate() { }
+
         public void StartMoving(Vector3 from, float durationOffset = 0f)
         {
             var nextPosition = IsHead

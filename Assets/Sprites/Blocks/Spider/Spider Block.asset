@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Spider Block
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 373289363, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -741373939, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -1160197098, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 1521649450, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 392770015, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 1862562790, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -1574600352, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -2137562406, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 976550782, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -694101591, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 688826252, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: -1145792961, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
+  - {fileID: 1074281752, guid: 89b6fc58484934190974179ca0fb8de0, type: 3}
