@@ -41,25 +41,21 @@ public class Snake : MonoBehaviour
         stats.speed = baseSpeed;
         head.Modify(stats);
 
-        if (Keyboard.current.wKey.isPressed)
+        if (Keyboard.current.upArrowKey.isPressed)
         {
             direction = Vector2.up;
         }
-        if (Keyboard.current.aKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed)
         {
             direction = Vector2.left;
         }
-        if (Keyboard.current.sKey.isPressed)
+        if (Keyboard.current.downArrowKey.isPressed)
         {
             direction = Vector2.down;
         }
-        if (Keyboard.current.dKey.isPressed)
+        if (Keyboard.current.rightArrowKey.isPressed)
         {
             direction = Vector2.right;
-        }
-        if (Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            LoseTail();
         }
         if (Keyboard.current.zKey.wasPressedThisFrame)
         {
