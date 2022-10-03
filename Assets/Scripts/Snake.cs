@@ -42,19 +42,19 @@ public class Snake : MonoBehaviour
         stats.speed = baseSpeed;
         head.Modify(stats);
 
-        if (Keyboard.current.upArrowKey.isPressed)
+        if (Keyboard.current.upArrowKey.isPressed && direction != Vector2.down)
         {
             direction = Vector2.up;
         }
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed && direction != Vector2.right)
         {
             direction = Vector2.left;
         }
-        if (Keyboard.current.downArrowKey.isPressed)
+        if (Keyboard.current.downArrowKey.isPressed && direction != Vector2.up)
         {
             direction = Vector2.down;
         }
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (Keyboard.current.rightArrowKey.isPressed && direction != Vector2.left)
         {
             direction = Vector2.right;
         }
