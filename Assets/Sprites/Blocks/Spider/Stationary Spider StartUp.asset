@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c801a5e8673462a89244374bcf9f91e, type: 3}
+  m_Name: Stationary Spider StartUp
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1537318796, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -508070644, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -69695252, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: 2046449077, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -1572984480, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: 365479637, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -1693321219, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -224870754, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -1849939671, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: 1368587395, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: 1250570071, guid: 334bf9a532aa84b7389640453821da1e, type: 3}
+  - {fileID: -1220068661, guid: 334bf9a532aa84b7389640453821da1e, type: 3}

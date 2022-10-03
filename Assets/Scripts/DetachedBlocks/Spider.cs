@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Effects;
 using Emitters.Bullets;
 using MyBox;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace DetachedBlocks
 {
     public class Spider : MonoBehaviour, IDamageListener, IBulletReceiver
     {
+        public bool stationary = false;
+
         [Header("Lines")] public SpritesLine enabling;
         public SpritesLine walking;
         public SpritesLine active;
@@ -26,8 +29,12 @@ namespace DetachedBlocks
 
         private void Start()
         {
+            if (stationary)
+            {
+                Singleton<EffectsSpawner>.Instance.Poof(transform.position);
+            }
+            
             legs.gameObject.SetActive(false);
-
 
             body.StartLine(enabling, false);
             body.onFinished.AddListener(Activate);
@@ -38,10 +45,13 @@ namespace DetachedBlocks
             gameObject.tag = "Obstacle";
             body.onFinished.RemoveAllListeners();
 
-            legs.gameObject.SetActive(true);
+            if (!stationary)
+            {
+                legs.gameObject.SetActive(true);
+                legs.StartLine(walking);
+            }
 
             body.StartLine(active);
-            legs.StartLine(walking);
 
             DOTween
                 .Sequence()
@@ -68,6 +78,9 @@ namespace DetachedBlocks
 
         private void Move()
         {
+            if (stationary)
+                return;
+
             var t = transform;
             var pos = t.position;
 

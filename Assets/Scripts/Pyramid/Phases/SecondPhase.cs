@@ -1,6 +1,7 @@
 using Effects;
 using Emitters;
 using MyBox;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Pyramid.Phases
@@ -8,6 +9,8 @@ namespace Pyramid.Phases
     public class SecondPhase : MonoBehaviour, IPhase
     {
         public WaitingBlock[] enabledDrops = {};
+
+        public GameObject turrets;
         
         public GameObject nextPhasePrefab;
         
@@ -19,6 +22,8 @@ namespace Pyramid.Phases
             {
                 Singleton<WaitingBlockDropper>.Instance.AddBlockForDrop(waitingBlock);
             }
+
+            Instantiate(turrets, transform.position, Quaternion.identity);
         }
         
         public void WeakSpotRemoved()
