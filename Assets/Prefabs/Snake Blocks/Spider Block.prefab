@@ -338,7 +338,7 @@ MonoBehaviour:
   bulletStart: {fileID: 3298095403890651702}
   reloading: {fileID: 11400000, guid: 8237f036302ea4455b2531cc436f160e, type: 2}
   active: {fileID: 11400000, guid: 1a3360f3c9d3e47eab4680e33308700f, type: 2}
-  shootSound: {fileID: 8300000, guid: 74e50d1708d07479fbf0891192ffc4c9, type: 3}
+  shootSound: {fileID: 8300000, guid: ba1db455c9b4f4cd68d50e9550035a85, type: 3}
 --- !u!1 &5416300405681621137
 GameObject:
   m_ObjectHideFlags: 0
