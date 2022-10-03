@@ -932,6 +932,8 @@ MonoBehaviour:
   - {fileID: 3589783443726093375, guid: f3e6f72fab54f438aa09f35bab0b7475, type: 3}
   - {fileID: 3589783443726093375, guid: f3e6f72fab54f438aa09f35bab0b7475, type: 3}
   - {fileID: 7811003196207011314, guid: e2284e6225e03443aa93b113dfe95a7a, type: 3}
+  - {fileID: 5533205944272281460, guid: ac747a1a1e4474176bf0500ebe46bfc4, type: 3}
+  - {fileID: 2051299379501053636, guid: ba78573fd8f0747be8ffd8874a47780f, type: 3}
   turrets: {fileID: 680024237247582582, guid: 43036dd3a554640d786cfa6adaf056ef, type: 3}
   nextPhasePrefab: {fileID: 571750049269015105, guid: ae1a68aa4e2bd41049a926e4b99a5f08, type: 3}
   spotsToRemove: 2
