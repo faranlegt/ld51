@@ -931,7 +931,7 @@ MonoBehaviour:
   - {fileID: 7811003196207011314, guid: e2284e6225e03443aa93b113dfe95a7a, type: 3}
   - {fileID: 5533205944272281460, guid: ac747a1a1e4474176bf0500ebe46bfc4, type: 3}
   nextPhasePrefab: {fileID: 3991470306499007200, guid: d36ed5097b4944f268dc17f2ac34a8b0, type: 3}
-  spotsToRemove: 6
+  spotsToRemove: 2
 --- !u!1 &4906574079433860540
 GameObject:
   m_ObjectHideFlags: 0
