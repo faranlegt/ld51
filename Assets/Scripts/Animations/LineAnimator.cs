@@ -128,4 +128,9 @@ public class LineAnimator : MonoBehaviour
     }
 
     //private void OnDestroy() => _animationEnd?.Dispose();
+    public void Hide()
+    {
+        animate = false;
+        _renderer.sprite = null;
+    }
 }

@@ -28,9 +28,6 @@ namespace DetachedBlocks
             _animator.StartLine(tile, true);
         }
 
-        public override void Apply(Stats stats)
-        {
-            mod.Apply(stats);
-        }
+        public override Modification GetModification() => mod;
     }
 }

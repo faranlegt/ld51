@@ -13,7 +13,7 @@ namespace SnakeBlocks
     {
         public BlockDescription description;
 
-        public List<ModifierTile> modifications = new();
+        public List<Modification> modifications = new();
 
         [Space, Header("Movement"), ReadOnly] public Vector3 startingPoint;
 
@@ -79,7 +79,7 @@ namespace SnakeBlocks
             if (collision.gameObject.CompareTag("Modifier"))
             {
                 var m = collision.gameObject.GetComponent<ModifierTile>();
-                modifications.Add(m);
+                modifications.Add(m.GetModification());
             }
         }
 
@@ -88,7 +88,7 @@ namespace SnakeBlocks
             if (collision.gameObject.CompareTag("Modifier"))
             {
                 var m = collision.gameObject.GetComponent<ModifierTile>();
-                modifications.Remove(m);
+                modifications.Remove(m.GetModification());
             }
         }
 
