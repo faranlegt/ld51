@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Effects;
+using Emitters;
 using MyBox;
 using UnityEngine;
 
@@ -46,6 +47,7 @@ namespace Pyramid
         public void Destroy()
         {
             _shooting.Complete();
+            FindObjectOfType<WinCanvas>(true).gameObject.SetActive(true);
         }
 
         private void CheckFrame(int frame)

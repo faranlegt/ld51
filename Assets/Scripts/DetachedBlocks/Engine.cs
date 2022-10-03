@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DetachedBlocks
 {
     public class Engine : ModifierTile
-    {
+    {   
         public SpeedModification mod = new();
         
         public SpritesLine detach, tile;
