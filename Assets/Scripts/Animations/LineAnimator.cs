@@ -13,6 +13,7 @@ public class LineAnimator : MonoBehaviour
     public float frameLength = 1f;
 
     public UnityEvent onFinished;
+    public UnityEvent<int> onNewFrame;
 
     private SpriteRenderer _renderer;
     private SpritesLine _oldSprites;
@@ -26,6 +27,7 @@ public class LineAnimator : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         
         onFinished ??= new UnityEvent();
+        onNewFrame ??= new UnityEvent<int>();
 
         SyncSprite();
     }
@@ -86,6 +88,7 @@ public class LineAnimator : MonoBehaviour
                 if (loop)
                 {
                     animationFrame = sprites.sprites.Length - 1;
+                    onNewFrame.Invoke(animationFrame);
                 }
                 else
                 {
@@ -96,6 +99,7 @@ public class LineAnimator : MonoBehaviour
             else
             {
                 animationFrame--;
+                onNewFrame.Invoke(animationFrame);
             }
         }
         else
@@ -105,6 +109,7 @@ public class LineAnimator : MonoBehaviour
                 if (loop)
                 {
                     animationFrame = 0;
+                    onNewFrame.Invoke(animationFrame);
                 }
                 else
                 {
@@ -115,6 +120,7 @@ public class LineAnimator : MonoBehaviour
             else
             {
                 animationFrame++;
+                onNewFrame.Invoke(animationFrame);
             }
         }
 
