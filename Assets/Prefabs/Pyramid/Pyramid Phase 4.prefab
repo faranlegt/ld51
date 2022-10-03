@@ -174,7 +174,7 @@ MonoBehaviour:
   baseAnimator: {fileID: 3991470306716228971}
   spider: {fileID: 606509029800119080, guid: 8ebf96a57d44c408b8ece197fd9752b2, type: 3}
   spawnPlace: {fileID: 3991470307395539924}
-  spawnTime: 7.5
+  spawnTime: 5
 --- !u!1 &3991470306716228973
 GameObject:
   m_ObjectHideFlags: 0

@@ -929,6 +929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabledDrops:
   - {fileID: 3589783443726093375, guid: f3e6f72fab54f438aa09f35bab0b7475, type: 3}
+  - {fileID: 3589783443726093375, guid: f3e6f72fab54f438aa09f35bab0b7475, type: 3}
+  - {fileID: 3589783443726093375, guid: f3e6f72fab54f438aa09f35bab0b7475, type: 3}
   turrets: {fileID: 680024237247582582, guid: 43036dd3a554640d786cfa6adaf056ef, type: 3}
   nextPhasePrefab: {fileID: 571750049269015105, guid: ae1a68aa4e2bd41049a926e4b99a5f08, type: 3}
   spotsToRemove: 4
