@@ -16,5 +16,8 @@ public class ShieldSphere : MonoBehaviour, IBulletReceiver
         _transform.localScale = size * Vector3.one;
     }
 
-    public bool Shoot(Bullet b) => true;
+    public bool Shoot(Bullet b)
+    {
+        return !b.isFromPlayer;
+    }
 }
