@@ -167,9 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e416f7e9d2934c5991148c78840d0521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabledDrops: []
+  enabledDrops:
+  - {fileID: 2051299379501053636, guid: ba78573fd8f0747be8ffd8874a47780f, type: 3}
   spotsToRemove: 2
   barrel: {fileID: 7380745593197575320}
+  baseAnimator: {fileID: 3991470306716228971}
+  spider: {fileID: 606509029800119080, guid: 8ebf96a57d44c408b8ece197fd9752b2, type: 3}
+  spawnPlace: {fileID: 3991470307395539924}
+  spawnTime: 7.5
 --- !u!1 &3991470306716228973
 GameObject:
   m_ObjectHideFlags: 0
