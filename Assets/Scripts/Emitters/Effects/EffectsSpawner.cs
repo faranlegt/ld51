@@ -12,6 +12,10 @@ namespace Effects
         public SpritesLine attachEffect;
         public SpritesLine shootEffect;
 
+        [Header("sounds")] public AudioClip poofSound;
+        
+        public AudioClip explosionSound;
+
         private Transform _transform;
 
         private void Awake()
@@ -21,19 +25,19 @@ namespace Effects
 
         public void Explode(Vector3 position, float size = 2)
         {
-            CustomEffect(position, explosionEffect).transform.localScale = Vector3.one * size;
+            CustomEffect(position, explosionEffect, explosionSound).transform.localScale = Vector3.one * size;
         }
 
-        public void Poof(Vector3 position) => CustomEffect(position, poofEffect);
+        public void Poof(Vector3 position) => CustomEffect(position, poofEffect, poofSound);
         
-        public void Shoot(Vector3 position) => CustomEffect(position, shootEffect);
+        public void Shoot(Vector3 position) => CustomEffect(position, shootEffect, null);
 
-        public void Attach(Vector3 position) => CustomEffect(position, poofEffect);
+        public void Attach(Vector3 position) => CustomEffect(position, poofEffect, poofSound);
 
-        private Effect CustomEffect(Vector3 position, SpritesLine line)
+        private Effect CustomEffect(Vector3 position, SpritesLine line, AudioClip clip)
         {
             var o = Instantiate(effectPrefab, position, Quaternion.identity, _transform);
-            o.Init(line);
+            o.Init(line, clip);
             return o;
         }
     }

@@ -127,7 +127,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7520467453385791517}
   shootAnimation: {fileID: 11400000, guid: c8160e5a6654447b6bdb868ff53b3c51, type: 2}
   destroy: {fileID: 11400000, guid: 2c754e715f11844e59a52c722813329f, type: 2}
-  shootClip: {fileID: 8300000, guid: 168c07fd0804142f0b927cb4eda7ba0e, type: 3}
+  shootClip: {fileID: 8300000, guid: 60fda9e803e1348868f7c40ad0f2bddd, type: 3}
 --- !u!1 &9089590359449665207
 GameObject:
   m_ObjectHideFlags: 0

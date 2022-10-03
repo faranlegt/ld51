@@ -27,6 +27,18 @@ namespace DetachedBlocks
 
         public Transform bulletStart;
 
+        [Header("sounds")]
+        public AudioClip shootClip;
+
+        public AudioClip birthClip;
+        
+        private AudioSource _audio;
+
+        private void Awake()
+        {
+            _audio = this.GetOrAddComponent<AudioSource>();
+        }
+
         private void Start()
         {
             if (stationary)
@@ -45,6 +57,9 @@ namespace DetachedBlocks
             gameObject.tag = "Obstacle";
             body.onFinished.RemoveAllListeners();
 
+            
+            _audio.PlayOneShot(birthClip);
+            
             if (!stationary)
             {
                 legs.gameObject.SetActive(true);
@@ -68,6 +83,7 @@ namespace DetachedBlocks
 
         private void Shoot()
         {
+            _audio.PlayOneShot(shootClip);
             Singleton<Bullets>.Instance.Shoot(
                 bullet,
                 bulletStart.position,

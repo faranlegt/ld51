@@ -111,6 +111,9 @@ MonoBehaviour:
   onFinished:
     m_PersistentCalls:
       m_Calls: []
+  onNewFrame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &7730970228340504371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8d91415c174bedb4ac0a4d56b84158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stationary: 0
   enabling: {fileID: 11400000, guid: fd735a523f55a4109b06ba877f1e8e74, type: 2}
   walking: {fileID: 11400000, guid: 57b5c08ff5bea4372949f5b49fa62dae, type: 2}
   active: {fileID: 11400000, guid: 0b05c9b3184854be186de49ee03eafca, type: 2}
@@ -159,6 +163,8 @@ MonoBehaviour:
   shootDelay: 3
   bullet: {fileID: 11400000, guid: 0f6569fd1c1a24e35a862068ac39564e, type: 2}
   bulletStart: {fileID: 2509255092710991150}
+  shootClip: {fileID: 8300000, guid: 168c07fd0804142f0b927cb4eda7ba0e, type: 3}
+  birthClip: {fileID: 8300000, guid: 74e50d1708d07479fbf0891192ffc4c9, type: 3}
 --- !u!210 &606509029800119081
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -305,5 +311,8 @@ MonoBehaviour:
   animate: 1
   frameLength: 0.05
   onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
