@@ -40,7 +40,7 @@ namespace Pyramid
                     })
                 .SetLoops(-1);
             
-            _shooting.ManualUpdate(Time.time, 0);
+            _shooting.ManualUpdate(Time.timeSinceLevelLoad, 0);
             _shooting.OnStepComplete(() => _animator.LaunchOnce(shootAnimation));
         }
 

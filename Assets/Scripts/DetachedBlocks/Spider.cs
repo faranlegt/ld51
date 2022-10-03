@@ -119,6 +119,7 @@ namespace DetachedBlocks
 
         public void ReceiveDamage()
         {
+            Singleton<EffectsSpawner>.Instance.Poof(transform.position);
             Destroy(gameObject);
         }
 
@@ -127,7 +128,7 @@ namespace DetachedBlocks
             if (!b.isFromPlayer)
                 return false;
 
-            Destroy(gameObject);
+            ReceiveDamage();
 
             return true;
         }
