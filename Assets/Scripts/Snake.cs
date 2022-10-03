@@ -116,6 +116,7 @@ public class Snake : MonoBehaviour
         newBlock.StartMoving(position);
 
         followCamera.Follow = newBlock.transform;
+        Singleton<HintsController>.Instance.RebuildLists();
 
         return newBlock;
     }
@@ -135,6 +136,8 @@ public class Snake : MonoBehaviour
         tail.Detach();
 
         tail = tail.parent;
+        
+        Singleton<HintsController>.Instance.RebuildLists();
     }
 
     public void RemoveBlock(SnakeBlock block)
@@ -160,6 +163,7 @@ public class Snake : MonoBehaviour
         }
 
         Destroy(block.gameObject);
+        Singleton<HintsController>.Instance.RebuildLists();
     }
 
     public void Die()

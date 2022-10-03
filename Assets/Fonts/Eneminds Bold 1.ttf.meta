@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d296dd26ce6304b078925859b1c5daf6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Eneminds Bold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bbb7c7d5320a04d39ba68fb902a6de75, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

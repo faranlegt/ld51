@@ -15,6 +15,11 @@ public class BlockDescription : ScriptableObject
     [Header("Prefabs")] public SnakeBlock baseBlock;
 
     [Header("Detach")] public bool poofOnDetach = true;
-    
+
     public GameObject detachedBlock;
+
+    [Header("UI")] public Sprite headUiImage;
+    public Sprite activeUiImage;
+    public Sprite passiveImage;
+    public Sprite lastUiImage;
 }

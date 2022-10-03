@@ -19,3 +19,7 @@ MonoBehaviour:
   baseBlock: {fileID: 5018024698631317523, guid: 1d9c29b25693848f4bc93ba93a3c249c, type: 3}
   poofOnDetach: 1
   detachedBlock: {fileID: 6721958678199956381, guid: a9a362e01a46d42c8b693366b7525892, type: 3}
+  headUiImage: {fileID: 21300000, guid: 02dc834b3299e4697babf36e8f354829, type: 3}
+  activeUiImage: {fileID: 21300000, guid: f6dd155b4d92140339d402ecab7ad1d8, type: 3}
+  passiveImage: {fileID: 21300000, guid: a9690c7782821473782f98410dfa0a05, type: 3}
+  lastUiImage: {fileID: 21300000, guid: c428073ebb5d749daa36cf9eb0db14fc, type: 3}

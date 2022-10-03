@@ -24,6 +24,8 @@ namespace Pyramid.Phases
             }
 
             Instantiate(turrets, transform.position, Quaternion.identity);
+            
+            Destroy(Singleton<HintsController>.Instance.firstPhaseHint);
         }
         
         public void WeakSpotRemoved()
