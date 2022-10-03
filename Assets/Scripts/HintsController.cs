@@ -20,7 +20,7 @@ public class HintsController : MonoBehaviour
     {
         if (!snake) return;
 
-        timerText.text = (10 - (Time.time) % 10).RoundToInt().ToString();
+        timerText.text = (10 - (Time.timeSinceLevelLoad) % 10).RoundToInt().ToString();
     }
 
     public void RebuildLists()
