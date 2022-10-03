@@ -24,7 +24,6 @@ namespace Pyramid
             _shooting = DOTween
                 .Sequence()
                 .PrependInterval(10)
-                .OnStepComplete(() => _animator.LaunchOnce(shootAnimation))
                 .OnComplete(
                     () =>
                     {
@@ -34,6 +33,9 @@ namespace Pyramid
                             .Explode(transform.position, 3);
                     })
                 .SetLoops(-1);
+            
+            _shooting.ManualUpdate(Time.time, 0);
+            _shooting.OnStepComplete(() => _animator.LaunchOnce(shootAnimation));
         }
 
         public void Destroy()

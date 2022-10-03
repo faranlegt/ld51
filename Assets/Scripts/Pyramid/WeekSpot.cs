@@ -28,7 +28,10 @@ namespace Pyramid
 
         private void Start()
         {
-            damageObject.SetActive(false);
+            if (damageObject)
+            {
+                damageObject.SetActive(false);
+            }
 
             health = maxHealth;
         }

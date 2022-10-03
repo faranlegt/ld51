@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 548970861, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
-  - {fileID: -720233078, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
   - {fileID: -1490981279, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
-  - {fileID: 1099627096, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
   - {fileID: 916554833, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
-  - {fileID: 446947026, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
   - {fileID: 531961765, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
-  - {fileID: -1868960043, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
   - {fileID: 1027142561, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
+  - {fileID: -720233078, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
+  - {fileID: 1099627096, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
+  - {fileID: 446947026, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
+  - {fileID: -1868960043, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}
   - {fileID: -2120007850, guid: e8a8c6c8a25a94e5789e26f173e8e32d, type: 3}

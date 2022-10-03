@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Pyramid.Phases
 {
-    public class ThirdPhase : MonoBehaviour, IPhase
+    public class LastPhase : MonoBehaviour, IPhase
     {
-        public GameObject nextPhasePrefab;
-        
         public int spotsToRemove = 2;
+        public Barrel barrel;
         
         public void WeakSpotRemoved()
         {
@@ -16,17 +15,14 @@ namespace Pyramid.Phases
 
             if (spotsToRemove <= 0)
             {
-                NextPhase();
+                FinishGame();
             }
         }
 
-        private void NextPhase()
+        private void FinishGame()
         {
             Singleton<EffectsSpawner>.Instance.Explode(transform.position, 3);
-            
-            Destroy(gameObject);
-            
-            Instantiate(nextPhasePrefab, transform.position, Quaternion.identity);
+            barrel.Destroy();
         }
     }
 }

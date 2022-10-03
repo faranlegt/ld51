@@ -1,3 +1,5 @@
+using Effects;
+using MyBox;
 using UnityEngine;
 
 namespace Pyramid.Phases
@@ -20,6 +22,8 @@ namespace Pyramid.Phases
 
         private void NextPhase()
         {
+            Singleton<EffectsSpawner>.Instance.Explode(transform.position, 3);
+            
             Destroy(gameObject);
             
             Instantiate(nextPhasePrefab, transform.position, Quaternion.identity);
