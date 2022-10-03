@@ -62,6 +62,10 @@ public class Snake : MonoBehaviour
         {
             head.Activate();
         }
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            Lose();
+        }
     }
 
     private void CheckDeath()
