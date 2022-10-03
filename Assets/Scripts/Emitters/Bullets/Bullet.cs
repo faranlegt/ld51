@@ -11,7 +11,7 @@ namespace Emitters.Bullets
 
         public Vector2 direction;
         public bool isFromPlayer;
-        
+
         private SpriteRenderer _renderer;
 
         private void Awake()
@@ -46,7 +46,11 @@ namespace Emitters.Bullets
             if (shot)
             {
                 Destroy(gameObject);
-                Singleton<EffectsSpawner>.Instance.Poof(transform.position);
+                
+                if (description.poofs)
+                {
+                    Singleton<EffectsSpawner>.Instance.Poof(transform.position);
+                }
             }
         }
     }

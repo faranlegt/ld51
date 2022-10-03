@@ -8,5 +8,7 @@ namespace Emitters.Bullets
         public Sprite sprite;
 
         public float speed;
+
+        public bool poofs;
     }
 }
