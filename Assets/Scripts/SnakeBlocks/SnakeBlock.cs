@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace SnakeBlocks
 {
-    public class SnakeBlock : MonoBehaviour, IExplosionListener, IBulletReceiver
+    public class SnakeBlock : MonoBehaviour, IDamageListener, IBulletReceiver
     {
         public BlockDescription description;
 
@@ -20,6 +20,8 @@ namespace SnakeBlocks
         [ReadOnly] public Vector3 endPoint;
 
         [ReadOnly] public float moveDuration;
+
+        public bool isDamaging;
 
         public bool isStopped;
 
@@ -76,6 +78,14 @@ namespace SnakeBlocks
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (isDamaging && collision.gameObject.HasComponent<IDamageListener>())
+            {
+                if (collision.gameObject.HasComponent<SnakeBlock>()) return;
+                
+                var d = collision.gameObject.GetComponent<IDamageListener>();
+                d.ReceiveDamage();
+            }
+            
             if (collision.gameObject.CompareTag("Modifier"))
             {
                 var m = collision.gameObject.GetComponent<ModifierTile>();
@@ -94,6 +104,11 @@ namespace SnakeBlocks
 
         private void OnCollisionStay2D(Collision2D col)
         {
+            if (isDamaging && col.gameObject.HasComponent<IDamageListener>())
+            {
+                return;
+            }
+            
             if (col.gameObject.CompareTag("Snake Block"))
             {
                 var block = col.gameObject.GetComponent<SnakeBlock>();
@@ -192,7 +207,7 @@ namespace SnakeBlocks
             }
         }
 
-        public void Explode()
+        public void ReceiveDamage()
         {
             snake.RemoveBlock(this);
         }

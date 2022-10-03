@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DetachedBlocks
 {
-    public class Shield : MonoBehaviour, IExplosionListener
+    public class Shield : MonoBehaviour, IDamageListener
     {
         public SpritesLine workingLine;
 
@@ -33,7 +33,7 @@ namespace DetachedBlocks
             _mainRenderer.StartLine(workingLine, true);
         }
 
-        public void Explode()
+        public void ReceiveDamage()
         {
             Singleton<EffectsSpawner>.Instance.Explode(transform.position);
             

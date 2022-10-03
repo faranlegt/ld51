@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace DetachedBlocks
 {
-    public class Slime : MonoBehaviour, IExplosionListener, IBulletReceiver
+    public class Slime : MonoBehaviour, IDamageListener, IBulletReceiver
     {
         public Slime slime;
 
@@ -50,7 +50,7 @@ namespace DetachedBlocks
             }
         }
 
-        public void Explode()
+        public void ReceiveDamage()
         {
             Destroy(gameObject);
         }

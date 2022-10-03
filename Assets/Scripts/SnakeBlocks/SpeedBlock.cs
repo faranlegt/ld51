@@ -68,6 +68,7 @@ namespace SnakeBlocks
 
             isActive = true;
             isCharged = false;
+            isDamaging = true;
             
             activationRenderer.LaunchOnce(activation);
 
@@ -81,6 +82,7 @@ namespace SnakeBlocks
                         .OnStart(
                             () =>
                             {
+                                isDamaging = false;
                                 isActive = false;
                                 activationRenderer.Hide();
                             })

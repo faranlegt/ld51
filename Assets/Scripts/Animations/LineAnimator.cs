@@ -39,9 +39,12 @@ public class LineAnimator : MonoBehaviour
 
     public void StartLine(SpritesLine line, bool? loop = null, bool? reverse = null)
     {
+        gameObject.SetActive(true);
+        
         sprites = line;
         animationFrame = 0;
         animate = true;
+        
         this.loop = loop ?? this.loop;
         this.reverse = reverse ?? this.reverse;
     }
@@ -136,6 +139,7 @@ public class LineAnimator : MonoBehaviour
     //private void OnDestroy() => _animationEnd?.Dispose();
     public void Hide()
     {
+        gameObject.SetActive(false);
         animate = false;
         _renderer.sprite = null;
     }

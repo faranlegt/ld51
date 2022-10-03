@@ -27,11 +27,11 @@ namespace DetachedBlocks
                 var go = col.gameObject;
                 if (!go) continue;
                 
-                IExplosionListener[] listeners = go.GetComponents<IExplosionListener>();
+                IDamageListener[] listeners = go.GetComponents<IDamageListener>();
                 
                 foreach (var explosionListener in listeners)
                 {
-                    explosionListener.Explode();
+                    explosionListener.ReceiveDamage();
                 }
             }
 

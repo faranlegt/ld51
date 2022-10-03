@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace DetachedBlocks
 {
-    public class Spider : MonoBehaviour, IExplosionListener, IBulletReceiver
+    public class Spider : MonoBehaviour, IDamageListener, IBulletReceiver
     {
         [Header("Lines")] public SpritesLine enabling;
         public SpritesLine walking;
@@ -88,7 +88,7 @@ namespace DetachedBlocks
             }
         }
 
-        public void Explode()
+        public void ReceiveDamage()
         {
             Destroy(gameObject);
         }
