@@ -108,6 +108,9 @@ MonoBehaviour:
   onFinished:
     m_PersistentCalls:
       m_Calls: []
+  onNewFrame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1369957112491367771
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +215,9 @@ MonoBehaviour:
   animate: 1
   frameLength: 0.1
   onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1875364213593247608
@@ -404,6 +410,9 @@ MonoBehaviour:
   onFinished:
     m_PersistentCalls:
       m_Calls: []
+  onNewFrame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2442512535949612490
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,10 +509,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 11400000, guid: a6389c1e2cfc147f1a7aad440595f53f, type: 2}
-  modifications: []
   startingPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   moveDuration: 0
+  isDamaging: 0
   isStopped: 0
   _blockAnimator: {fileID: 8880485724904763747}
   _tracksAnimator: {fileID: 5708312140970760246}
@@ -514,10 +523,11 @@ MonoBehaviour:
   ownShield: {fileID: 0}
   childShield: {fileID: 0}
   parentShield: {fileID: 0}
-  activation: {fileID: 0}
   headAnimator: {fileID: 1150137385376945952}
   glassAnimator: {fileID: 3469657403319711062}
   isActive: 0
+  activate: {fileID: 8300000, guid: a93cf34fee8e44170b472609813d8fa3, type: 3}
+  deactivate: {fileID: 8300000, guid: 902a008718b084b0aa0db4c175176fda, type: 3}
 --- !u!1 &5416300405681621137
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +632,9 @@ MonoBehaviour:
   animate: 1
   frameLength: 0.1
   onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6453036315633667133

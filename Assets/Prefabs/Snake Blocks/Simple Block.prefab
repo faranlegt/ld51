@@ -103,7 +103,10 @@ MonoBehaviour:
   reverse: 0
   animate: 1
   frameLength: 0.1
-  finished:
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1875364213593247608
@@ -242,12 +245,14 @@ MonoBehaviour:
   startingPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   moveDuration: 0
-  stopAsked: 0
+  isDamaging: 0
   isStopped: 0
   _blockAnimator: {fileID: 8880485724904763747}
   _tracksAnimator: {fileID: 5708312140970760246}
   parent: {fileID: 0}
   child: {fileID: 0}
+  snake: {fileID: 0}
+  detachSound: {fileID: 8300000, guid: 1769e288471b64047be17cd49626b2f3, type: 3}
 --- !u!61 &6675806752867261790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,7 +403,10 @@ MonoBehaviour:
   reverse: 0
   animate: 1
   frameLength: 0.1
-  finished:
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6453036315633667133

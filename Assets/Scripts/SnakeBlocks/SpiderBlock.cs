@@ -17,6 +17,8 @@ namespace SnakeBlocks
         [Header("Lines")] public SpritesLine reloading;
         public SpritesLine active;
 
+        [Header("Sound")] public AudioClip shootSound;
+
         public override void Activate()
         {
             if (!canShoot)
@@ -44,6 +46,8 @@ namespace SnakeBlocks
         private void Shoot()
         {
             var dir = (endPoint - startingPoint).normalized;
+            
+            AudioSource.PlayOneShot(shootSound);
             
             Singleton<Bullets>.Instance.Shoot(bullet, bulletStart.position, dir, true);
         }

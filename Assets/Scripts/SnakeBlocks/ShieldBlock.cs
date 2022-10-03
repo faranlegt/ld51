@@ -15,10 +15,15 @@ namespace SnakeBlocks
 
         [Header("State")] public bool isActive;
 
+        [Header("Sounds")] public AudioClip activate;
+        public AudioClip deactivate;
+
         private void Start()
         {
             headAnimator.onFinished.AddListener(ActivateShields);
             glassAnimator.gameObject.SetActive(false);
+            
+            AudioSource.PlayOneShot(activate);
         }
 
         private void ActivateShields()
@@ -66,12 +71,12 @@ namespace SnakeBlocks
         private void OnDestroy()
         {
             Destroy(ownShield.gameObject);
-            
+
             if (childShield && childShield.gameObject)
             {
                 Destroy(childShield.gameObject);
             }
-            
+
             if (parentShield && parentShield.gameObject)
             {
                 Destroy(parentShield.gameObject);

@@ -106,6 +106,9 @@ MonoBehaviour:
   onFinished:
     m_PersistentCalls:
       m_Calls: []
+  onNewFrame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1875364213593247608
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,17 +289,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 11400000, guid: f0693a798f63c4a7cbf08ba4fb1e3e75, type: 2}
-  modifications: []
   startingPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   moveDuration: 0
+  isDamaging: 0
   isStopped: 0
   _blockAnimator: {fileID: 8880485724904763747}
   _tracksAnimator: {fileID: 5708312140970760246}
   parent: {fileID: 0}
   child: {fileID: 0}
   snake: {fileID: 0}
+  detachSound: {fileID: 0}
   explosion: {fileID: 11400000, guid: bce4cc26ca8f0460eb285439bfb0a684, type: 2}
+  explosionSound: {fileID: 8300000, guid: dcebab36a681f4ee18d06008aa281320, type: 3}
 --- !u!1 &5416300405681621137
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +406,9 @@ MonoBehaviour:
   animate: 1
   frameLength: 0.1
   onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onNewFrame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6453036315633667133

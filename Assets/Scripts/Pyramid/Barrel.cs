@@ -13,11 +13,15 @@ namespace Pyramid
 
         public SpritesLine shootAnimation, destroy;
 
+        public AudioClip shootClip;
+
         private LineAnimator _animator;
         private Sequence _shooting;
+        private AudioSource _audio;
 
         private void Awake()
         {
+            _audio = this.GetOrAddComponent<AudioSource>();
             _animator = GetComponent<LineAnimator>();
             _animator.onNewFrame.AddListener(CheckFrame);
 
@@ -28,6 +32,7 @@ namespace Pyramid
                     () =>
                     {
                         _animator.LaunchOnce(destroy);
+                        
                         Singleton<EffectsSpawner>
                             .Instance
                             .Explode(transform.position, 3);
@@ -51,6 +56,10 @@ namespace Pyramid
             Shoot();
         }
 
-        private void Shoot() => Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        private void Shoot()
+        {
+            _audio.PlayOneShot(shootClip);
+            Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        }
     }
 }

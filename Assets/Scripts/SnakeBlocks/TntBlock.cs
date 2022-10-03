@@ -8,8 +8,11 @@ namespace SnakeBlocks
     {
         [Header("Activation")] public SpritesLine explosion;
 
+        [Header("Sound")] public AudioClip explosionSound;
+
         public override void Activate()
         {
+            AudioSource.PlayOneShot(explosionSound);
             _blockAnimator.StartLine(explosion, false);
             _blockAnimator.onFinished.AddListener(ExplodeAround);
         }

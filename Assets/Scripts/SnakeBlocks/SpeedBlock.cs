@@ -28,6 +28,8 @@ namespace SnakeBlocks
 
         public SpritesLine activation;
 
+        public AudioClip useClip;
+
         private void Start()
         {
             if (activationRenderer)
@@ -65,6 +67,11 @@ namespace SnakeBlocks
         public override void Activate()
         {
             if (!canBeActivated || !isCharged) return;
+            
+            if (useClip)
+            {
+                AudioSource.PlayOneShot(useClip);
+            }
 
             isActive = true;
             isCharged = false;

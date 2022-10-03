@@ -36,6 +36,10 @@ namespace SnakeBlocks
 
         [ReadOnly] public Snake snake;
 
+        [Header("Sound")] public AudioClip detachSound;
+        
+        protected AudioSource AudioSource;
+
         private Transform _transform;
 
         private Tween _movementTween;
@@ -43,6 +47,7 @@ namespace SnakeBlocks
 
         public void Awake()
         {
+            AudioSource = this.GetOrAddComponent<AudioSource>();
             snake = GetComponentInParent<Snake>();
             _transform = transform;
         }
@@ -80,12 +85,13 @@ namespace SnakeBlocks
         {
             if (isDamaging && collision.gameObject.HasComponent<IDamageListener>())
             {
-                if (collision.gameObject.HasComponent<SnakeBlock>()) return;
-                
+                if (collision.gameObject.HasComponent<SnakeBlock>())
+                    return;
+
                 var d = collision.gameObject.GetComponent<IDamageListener>();
                 d.ReceiveDamage();
             }
-            
+
             if (collision.gameObject.CompareTag("Modifier"))
             {
                 var m = collision.gameObject.GetComponent<ModifierTile>();
@@ -108,7 +114,7 @@ namespace SnakeBlocks
             {
                 return;
             }
-            
+
             if (col.gameObject.CompareTag("Snake Block"))
             {
                 var block = col.gameObject.GetComponent<SnakeBlock>();
@@ -218,7 +224,7 @@ namespace SnakeBlocks
                 return false;
 
             snake.RemoveBlock(this);
-            
+
             return true;
         }
 
@@ -236,6 +242,11 @@ namespace SnakeBlocks
                     _transform.position.SnapToOne(),
                     Quaternion.identity
                 );
+            }
+
+            if (detachSound)
+            {
+                AudioSource.PlayOneShot(detachSound);
             }
 
             Destroy(gameObject);
