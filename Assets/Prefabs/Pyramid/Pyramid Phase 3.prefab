@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020c458fcd248029ef4a311ae784f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 2
   health: 0
   damageObject: {fileID: 571750048694070876}
   explosionPoint: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020c458fcd248029ef4a311ae784f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 2
   health: 0
   damageObject: {fileID: 571750048580815114}
   explosionPoint: {fileID: 0}

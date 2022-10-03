@@ -1,6 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 using Cinemachine;
+using MyBox;
 using SnakeBlocks;
 using UnityEngine;
 
@@ -23,5 +24,8 @@ public class SnakeBuilder : MonoBehaviour
             var pos = new Vector3(i, 0, 0);
             snake.Prepend(pos, startingBlocks[i]);
         }
+
+        Singleton<HintsController>.Instance.snake = snake;
+        Singleton<HintsController>.Instance.RebuildLists();
     }
 }
