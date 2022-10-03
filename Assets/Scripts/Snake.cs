@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cinemachine;
 using Effects;
+using Emitters;
 using Modifiers;
 using MyBox;
 using SnakeBlocks;
@@ -83,6 +84,7 @@ public class Snake : MonoBehaviour
             Singleton<EffectsSpawner>.Instance.Poof(b.transform.position);
         }
 
+        Lose();
         Destroy(gameObject);
     }
 
@@ -125,7 +127,7 @@ public class Snake : MonoBehaviour
     {
         if (tail == head)
         {
-            Debug.LogError("Oooops, lose");
+            Lose();
             return;
         }
 
@@ -142,6 +144,11 @@ public class Snake : MonoBehaviour
         {
             head = block.child;
             followCamera.Follow = head.transform;
+
+            if (block == tail)
+            {
+                Lose();
+            }
         }
         else if (block == tail)
         {
@@ -160,6 +167,11 @@ public class Snake : MonoBehaviour
 
         Destroy(block.gameObject);
         Singleton<HintsController>.Instance.RebuildLists();
+    }
+
+    private void Lose()
+    {
+        FindObjectOfType<DeathCanvas>(true).gameObject.SetActive(true);
     }
 
     public void Die()
