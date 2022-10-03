@@ -126,6 +126,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 823202140027194037, guid: 46da0e3d8b1a140889de7bdbce0d4962, type: 3}
   bulletSpawn: {fileID: 7520467453385791517}
   shootAnimation: {fileID: 11400000, guid: c8160e5a6654447b6bdb868ff53b3c51, type: 2}
+  destroy: {fileID: 11400000, guid: 2c754e715f11844e59a52c722813329f, type: 2}
 --- !u!1 &9089590359449665207
 GameObject:
   m_ObjectHideFlags: 0
